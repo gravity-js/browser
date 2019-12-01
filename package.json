@@ -1,9 +1,11 @@
 {
   "name": "@gravity-js/browser",
   "version": "0.0.1",
-  "description": "",
-  "main": "./src/index.js",
+  "description": "Gravity-js for browsers",
+  "main": "./dist/index.js",
   "scripts": {
+    "start": "babel src -d ./dist -w",
+    "build": "babel src -d ./dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +17,11 @@
   "bugs": {
     "url": "https://github.com/gravity-js/browser/issues"
   },
-  "homepage": "https://github.com/gravity-js/browser#readme"
+  "homepage": "https://github.com/gravity-js/browser#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.7.4",
+    "@babel/core": "^7.7.4",
+    "@babel/plugin-proposal-class-properties": "^7.7.4",
+    "@babel/preset-env": "^7.7.4"
+  }
 }
