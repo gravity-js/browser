@@ -1,5 +1,5 @@
 {
-  "name": "@gravity-js/browser",
+  "name": "@gravity-js/client",
   "version": "0.0.1",
   "description": "Gravity-js for browsers",
   "main": "./dist/index.js",
