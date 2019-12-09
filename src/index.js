@@ -15,8 +15,6 @@ const unmount = () => {
   console.log('const unmount = () => {}')
 }
 
-window.$ = getOrCreateNode
-
 // TODO refactor structure of exports
 export {
   mount,
@@ -25,3 +23,5 @@ export {
   View,
   action,
 }
+
+export default getOrCreateNode
