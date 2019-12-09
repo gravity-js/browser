@@ -1,8 +1,10 @@
 const NODES_MAP = {}
 const COMPONENTS_MAP = {}
+const PARENT_COMPONENTS = []
 
 
 export {
   NODES_MAP,
   COMPONENTS_MAP,
+  PARENT_COMPONENTS,
 }

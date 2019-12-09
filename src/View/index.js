@@ -1,6 +1,7 @@
-import getOrCreateNode from './utils/getOrCreateNode'
 import checkIsEqualProps from './utils/checkIsEqualProps'
 import checkIsEqualChildren from './utils/checkIsEqualChildren'
+
+import { PARENT_COMPONENTS } from './config/data'
 
 
 let instanceCounter = 0
@@ -67,7 +68,10 @@ class View {
 
     this.$childrenComponentsToRemove = this.$childrenComponents
     this.$childrenComponents = {}
+
+    PARENT_COMPONENTS.push(this)
     if (this.render) this._$rootNode = this.render()
+    PARENT_COMPONENTS.pop()
 
     if (this.$isMounted){
       if (this.afterRender) this.afterRender()
@@ -77,8 +81,6 @@ class View {
 
     return this._$rootNode
   }
-
-  _$ = (...args) => getOrCreateNode(this, ...args)
 
   get props() {
     return this._$props

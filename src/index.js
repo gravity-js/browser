@@ -1,5 +1,6 @@
 import Store, { action } from './Store'
 import View from './View'
+import getOrCreateNode from './View/utils/getOrCreateNode'
 
 
 const mount = (component, targetNode=window.document.body) => {
@@ -14,6 +15,7 @@ const unmount = () => {
   console.log('const unmount = () => {}')
 }
 
+window.$ = getOrCreateNode
 
 // TODO refactor structure of exports
 export {

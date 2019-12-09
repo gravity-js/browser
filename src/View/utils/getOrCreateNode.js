@@ -1,12 +1,14 @@
-import { NODES_MAP, COMPONENTS_MAP } from '../config/data'
+import { NODES_MAP, COMPONENTS_MAP, PARENT_COMPONENTS } from '../config/data'
 
 import filterInvalidChildren from './filterInvalidChildren'
 import createNode from './createNode'
 import getNode from './getNode'
 
 
-const getOrCreateNode = (parentComponent, ownKey, nodeTypeOrComponent, props, ...children) => {
+const getOrCreateNode = (ownKey, nodeTypeOrComponent, props, ...children) => {
 	children = filterInvalidChildren(children)
+
+	const parentComponent = PARENT_COMPONENTS[PARENT_COMPONENTS.length - 1]
 
 	const key = `${parentComponent.$key}.${ownKey}`
 
